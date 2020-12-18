@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package toy.bom.v1;
+import "google/api/annotations.proto";
+option go_package = "toy/bom/v1;v1";
+
+service Bom {
+  rpc CreateBom (CreateBomRequest) returns (CreateBomReply) {
+    option (google.api.http) = {
+      post: "/v1/bom"
+    };
+  }
+}
+
+message CreateBomRequest {
+  string fileName = 1;
+}
+
+message CreateBomReply {
+  string message = 1;
+}
