@@ -9,6 +9,6 @@ import (
 	db2 "toy/internal/pkg/db"
 )
 //go:generate wire
-func InitRepo() (*Repo, error)  {
-	panic(wire.Build(db2.NewDB, data.Provider, biz.NewBomUseCase, NewRepo))
+func InitUseCase() (*UseCase, error)  {
+	panic(wire.Build(db2.NewDB, data.Provider, biz.NewBomUseCase, NewUseCase))
 }

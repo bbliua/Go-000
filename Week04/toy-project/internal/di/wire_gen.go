@@ -13,16 +13,16 @@ import (
 
 // Injectors from wire.go:
 
-func InitRepo() (*Repo, error) {
+func InitUseCase() (*UseCase, error) {
 	sqlDB, err := db.NewDB()
 	if err != nil {
 		return nil, err
 	}
 	bomRepo := data.NewBomRepo(sqlDB)
 	bomUseCase := biz.NewBomUseCase(bomRepo)
-	repo, err := NewRepo(bomUseCase)
+	useCase, err := NewUseCase(bomUseCase)
 	if err != nil {
 		return nil, err
 	}
-	return repo, nil
+	return useCase, nil
 }

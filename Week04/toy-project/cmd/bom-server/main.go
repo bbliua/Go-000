@@ -24,7 +24,7 @@ func init()  {
 
 func main() {
 	app := toy.New()
-	ouc, err := di.InitRepo()
+	ouc, err := di.InitUseCase()
 	if err != nil {
 		panic(err)
 	}
